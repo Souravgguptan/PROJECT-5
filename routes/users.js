@@ -50,7 +50,7 @@ router.get("/:id", (req, res)=>{
  * Paramaters: None
  */
 router.post("/", (req, res)=>{
-    const {id, name, surname, emai, subscriptionType, subscriptionDate} = req.body;
+    const {id, name, surname, email, subscriptionType, subscriptionDate} = req.body;
 
     const user = users.find((each)=> each.id === id);
     if(user){
@@ -60,7 +60,7 @@ router.post("/", (req, res)=>{
         })
     }
     users.push(
-        {id, name, surname, emai, subscriptionType, subscriptionDate
+        {id, name, surname, email, subscriptionType, subscriptionDate
     })
     return res.status(201).json({
         success: true,
